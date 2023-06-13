@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc</title>
+</head>
+<body>
+    <h4>Title</h4>
+    <div id="navigasi">
+        <button type="button" class="persegi">Hitung Luas Persegi</button>
+        <button tyoe="button" class ="segi3">Hitung luas segi3</button>
+    </div>
+
+    <div id="Hitungluaspersegi">
+        <div>
+            Nilai panjang
+                <input type="number" class ="PJ" size="15.1">
+        </div>
+
+        <div>
+           Nilai lebar <input type="number" class="LB" size="15,5">
+        </div>
+        <br>
+        <div>
+            
+               <button type="button" class="cmdLpersegi">Hitung luas</button>
+        </div>
+
+    </div>
+   
+    <div id="Hitungluassegi3">
+        <div>
+            Nilai panjang
+                <input type="number" class ="AL" size="15.1">
+        </div>
+
+        <div>
+           Nilai lebar <input type="number" class="T" size="15,5">
+        </div>
+        <br>
+        <div>
+            
+               <button type="button" class="cmdsegi3">Hitung luas</button>
+        </div>
+    </div>
+    <div id="hasil"></div>
+
+<!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#Hitungluaspersegi").hide();
+            $("Hitungluassegi3").hide();
+            $("#hasil.").hide();
+            
+            let judul ="KLIK TOMBOL";
+
+            $(".persegi").click(function(){
+                $("Hitungluaspersegi").hide(500);
+                $("Hitungluassegi3").show(500);
+                
+            });
+            $("h4").html(judul);
+        });
+    </script>
+</body>
+</html>
