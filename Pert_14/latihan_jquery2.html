@@ -32,12 +32,12 @@
    
     <div id="Hitungluassegi3">
         <div>
-            Nilai panjang
+            Nilai alas
                 <input type="number" class ="AL" size="15.1">
         </div>
 
         <div>
-           Nilai lebar <input type="number" class="T" size="15,5">
+           Nilai tinggi <input type="number" class="T" size="15,5">
         </div>
         <br>
         <div>
@@ -50,20 +50,59 @@
 <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
-        $(function(){
+        $(function() {
+            $("#hasil").hide();
             $("#Hitungluaspersegi").hide();
-            $("Hitungluassegi3").hide();
-            $("#hasil.").hide();
-            
-            let judul ="KLIK TOMBOL";
+            $("#Hitungluassegi3").hide();
 
-            $(".persegi").click(function(){
-                $("Hitungluaspersegi").hide(500);
-                $("Hitungluassegi3").show(500);
-                
+            let judul = "Klik Tombol";
+
+            $("h3").html("Luas Bangun Datar");
+
+            $(".persegi").click(function() {
+                $("#Hitungluassegi3").hide(500);
+                $("#Hitungluaspersegi").show(500);
+                judul = "Luas Persegi";
+                $("h3").html(judul);
             });
-            $("h4").html(judul);
-        });
+
+            $(".segi3").click(function() {
+                $("#Hitungluaspersegi").hide(500);
+                $("#Hitungluassegi3").show(500);
+                judul = "Luas Segitiga";
+                $("h3").html(judul);
+            });
+
+            // hitung luas persegi
+            $(".cmdLpersegi").click(function() {
+                let p = $(".PJ").val();
+                let l = $(".LB").val();
+                let lp = p*l;
+                let tx = "<center><h4>HASIL</h4></center>Luas Persegi dengan nilai : <br>";
+                tx += "Panjang = "+p+"cm<br>Lebar&nbsp;&nbsp;&nbsp; = "+l+"cm <br>";
+                tx += "Luas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Panjang X Lebar<br>";
+                tx += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = "+p+" X "+l+"<br>";
+                tx += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = "+lp+"<br>Jadi, Luas dari persegi tersebut adalah "+lp+"cm";
+
+                $("#hasil").html(tx);
+                $("#hasil").show(500);
+            });
+
+            // hitung luas segitiga
+            $(".cmdsegi3").click(function() {
+                let a = $(".AL").val();
+                let t = $(".T").val();
+                let ls = a*t;
+                let tx = "<center><h4>HASIL</h4></center>Luas Segitiga dengan nilai : <br>";
+                tx += "Alas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = "+a+"cm<br>Tinggi&nbsp;&nbsp;&nbsp; = "+t+"cm <br>";
+                tx += "Luas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Alas X Tinggi<br>";
+                tx += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = "+a+" X "+t+"<br>";
+                tx += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = "+ls+"<br>Jadi, Luas dari persegi tersebut adalah "+ls+"cm";
+           
+                $("#hasil").html(tx);
+                $("#hasil").show(500);
+            });
+        })
     </script>
 </body>
 </html>
